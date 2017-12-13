@@ -11,6 +11,31 @@ sys.setdefaultencoding('utf8')
 
 curr_dir ='.'
 
+proxy_set = raw_input("Do you want to set proxy [Y/N]: ")
+
+if (proxy_set == 'Y' or proxy_set == 'y'):
+    address = raw_input("Please enter proxy address (without https://): ")
+    port = raw_input("Please enter proxy port: ")
+
+    namepass = raw_input("Do you use username and password for proxy [Y/N]: ")
+
+    if (namepass == 'Y' or namepass == 'y'):
+        name = raw_input("Enter your username: ")
+        password = raw_input("Enter your password: ")
+        proxy = 'http://' + name + ':' + password + '@' + address + ':' + port
+    else:
+        proxy = 'http://' + address + ':' + port
+
+    print(proxy + " has been set as your proxy!")
+
+
+
+
+    os.environ['http_proxy'] = proxy
+    os.environ['HTTP_PROXY'] = proxy
+    os.environ['https_proxy'] = proxy
+    os.environ['HTTPS_PROXY'] = proxy
+
 EMAIL_ACCOUNT= raw_input("Enter your email: ")
 #EMAIL_ACCOUNT = "spotifyrounak@gmail.com"
 EMAIL_FOLDER = "INBOX" # or "[Gmail]/All Mail" or "[Gmail]/Sent Mail"
