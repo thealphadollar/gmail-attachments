@@ -29,13 +29,6 @@ if (proxy_set == 'Y' or proxy_set == 'y'):
     print(proxy + " has been set as your proxy!")
 
 
-
-
-    os.environ['http_proxy'] = proxy
-    os.environ['HTTP_PROXY'] = proxy
-    os.environ['https_proxy'] = proxy
-    os.environ['HTTPS_PROXY'] = proxy
-
 EMAIL_ACCOUNT= raw_input("Enter your email: ")
 #EMAIL_ACCOUNT = "spotifyrounak@gmail.com"
 EMAIL_FOLDER = "INBOX" # or "[Gmail]/All Mail" or "[Gmail]/Sent Mail"
